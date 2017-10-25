@@ -1,0 +1,31 @@
+{
+  "name": "ukkonen",
+  "version": "1.0.0",
+  "description": "Ukkonens approximate string matching algorithm for finding edit distance similar to Levenshtein",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "bench": "matcha bench.js"
+  },
+  "keywords": [
+    "Ukkonen",
+    "Hal",
+    "Berghel",
+    "Aproximate",
+    "string",
+    "match",
+    "ASM",
+    "EHD",
+    "Levenshtein"
+  ],
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "devDependencies": {
+    "chance-generators": "2.1.1",
+    "leven": "2.1.0",
+    "matcha": "0.7.0",
+    "mocha": "4.0.1",
+    "unexpected": "10.36.0",
+    "unexpected-check": "1.12.0"
+  }
+}
