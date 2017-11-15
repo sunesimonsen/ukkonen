@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "travis": "UNEXPECTED_CHECK_MAX_ITERATIONS=10000 mocha",
     "bench": "matcha bench.js"
   },
   "keywords": [
