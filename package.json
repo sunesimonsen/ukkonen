@@ -2,6 +2,11 @@
   "name": "ukkonen",
   "version": "1.2.0",
   "description": "Ukkonens approximate string matching algorithm for finding edit distance similar to Levenshtein",
+  "bugs": "https://github.com/sunesimonsen/ukkonen/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunesimonsen/ukkonen"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -19,7 +24,7 @@
     "EHD",
     "Levenshtein"
   ],
-  "author": "Sune Simonsen",
+  "author": "Sune Simonsen <sune@we-knowhow.dk>",
   "license": "MIT",
   "devDependencies": {
     "chance-generators": "2.1.1",
