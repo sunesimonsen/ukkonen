@@ -25,7 +25,7 @@
     "chance-generators": "2.1.1",
     "leven": "2.1.0",
     "matcha": "0.7.0",
-    "mocha": "4.0.1",
+    "mocha": "3.5.3",
     "unexpected": "10.36.0",
     "unexpected-check": "1.12.0"
   }
