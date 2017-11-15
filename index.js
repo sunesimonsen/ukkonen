@@ -58,8 +58,8 @@ function ukkonen(a, b, threshold) {
   var currentRow = new Array(arrayLength);
   var nextRow = new Array(arrayLength);
   for (var i = 0; i < arrayLength; i++) {
-    currentRow[i] = -Infinity;
-    nextRow[i] = -Infinity;
+    currentRow[i] = -1;
+    nextRow[i] = -1;
   }
 
   var aCharCodes = new Array(aLen);
@@ -86,7 +86,7 @@ function ukkonen(a, b, threshold) {
 
     var start;
     var previousCell;
-    var currentCell = -Infinity;
+    var currentCell = -1;
     var nextCell;
 
     if (i <= ZERO_K) {
