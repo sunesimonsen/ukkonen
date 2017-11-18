@@ -9,6 +9,10 @@ Ukkonen's algorithm is very competitive with the [Levenshtein distance](https://
 
 In addition to being a competitive alternative to Levenshtein distance, Ukkonen's algorithm also allows you to provide a threshold for the distance which increases the performance even more for texts that are longer than the threshold.
 
+<img src="./images/leven-for-tree-matching.gif" alt="HTML diffing using Levenshtein" height="200"> <img src="./images/ukkonen-for-tree-matching.gif" alt="HTML diffing using Ukkonen's algorithm" height="200">
+
+Above you can see the different of using Levenshtein distance and Ukkonen's algorithm for matching sub-trees when diffing HTML.
+
 ## Install
 
 ```sh
