@@ -1,6 +1,6 @@
 {
   "name": "ukkonen",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Ukkonens approximate string matching algorithm for finding edit distance similar to Levenshtein",
   "bugs": "https://github.com/sunesimonsen/ukkonen/issues",
   "repository": {
