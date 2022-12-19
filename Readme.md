@@ -47,33 +47,47 @@ The library is ES5 and will work with any JavaScript bundler in the browser as w
 I have benchmarked the library against [the fastest Levenshtein distance implementation on NPM](https://github.com/sindresorhus/leven).
 
 ```
-              Edit distance one word
- 245,499 op/s » ukkonen
- 502,333 op/s » leven
+# ukkonen: Edit distance one word (examples:14,iterations:100000)
+ok ~436 ms (0 s + 436153865 ns)
 
-              Edit distance on sentence with small differences
- 767,359 op/s » ukkonen
- 139,628 op/s » leven
+# leven: Edit distance one word (examples:14,iterations:100000)
+ok ~302 ms (0 s + 301616371 ns)
 
-              Edit distance on paragraphs with small differences
- 237,857 op/s » ukkonen
-   2,670 op/s » leven
+# ukkonen: Edit distance on sentence with small differences (examples:1,iterations:1000)
+ok ~1.79 ms (0 s + 1790152 ns)
 
-              Edit distance on longer texts with small differences
- 112,547 op/s » ukkonen
-     683 op/s » leven
+# leven: Edit distance on sentence with small differences (examples:1,iterations:1000)
+ok ~6.3 ms (0 s + 6299536 ns)
 
-              Edit distance on longer texts with many differences
-     372 op/s » ukkonen
-     416 op/s » leven
+# ukkonen: Edit distance on paragraphs with small differences (examples:1,iterations:1000)
+ok ~5 ms (0 s + 4998844 ns)
 
-              Edit distance on longer texts with small differences and a threshold of 10
- 127,725 op/s » ukkonen
-     678 op/s » leven
+# leven: Edit distance on paragraphs with small differences (examples:1,iterations:1000)
+ok ~370 ms (0 s + 370318109 ns)
 
-              Edit distance on longer texts with many differences and a threshold of 40
-  84,959 op/s » ukkonen
-     425 op/s » leven
+# ukkonen: Edit distance on longer texts with small differences (examples:1,iterations:1000)
+ok ~11 ms (0 s + 11247544 ns)
+
+# leven: Edit distance on longer texts with small differences (examples:1,iterations:1000)
+ok ~1.45 s (1 s + 452042903 ns)
+
+# ukkonen: Edit distance on longer texts with many differences (examples:1,iterations:1000)
+ok ~3.25 s (3 s + 246384120 ns)
+
+# leven: Edit distance on longer texts with many differences (examples:1,iterations:1000)
+ok ~2.34 s (2 s + 340836783 ns)
+
+# ukkonen: Edit distance on longer texts with small differences and a threshold of 20 (examples:1,iterations:1000)
+ok ~9.08 ms (0 s + 9078081 ns)
+
+# leven: Edit distance on longer texts with small differences and a threshold of 20 (examples:1,iterations:1000)
+ok ~1.49 s (1 s + 492442893 ns)
+
+# ukkonen: Edit distance on longer texts with many differences and a threshold of 40 (examples:1,iterations:1000)
+ok ~16 ms (0 s + 16197361 ns)
+
+# leven: Edit distance on longer texts with many differences and a threshold of 40 (examples:1,iterations:1000)
+ok ~2.31 s (2 s + 313343513 ns)
 ```
 
 ## Acknowledgements

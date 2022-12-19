@@ -5,7 +5,7 @@ const leven = require("leven");
 
 const suite = (name, iterations, examples) => {
   bench(
-    `${name} ${examples.length} - examples ${iterations} iterations (ukkonen)`,
+    `ukkonen: ${name} (examples:${examples.length},iterations:${iterations})`,
     (b) => {
       b.start();
       for (let i = 0; i < iterations; i++) {
@@ -18,7 +18,7 @@ const suite = (name, iterations, examples) => {
   );
 
   bench(
-    `${name} ${examples.length} - examples ${iterations} iterations (leven)`,
+    `leven: ${name} (examples:${examples.length},iterations:${iterations})`,
     (b) => {
       b.start();
       for (let i = 0; i < iterations; i++) {
