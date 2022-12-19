@@ -14,7 +14,6 @@
     "format": "prettier --write **/*.{md,js,json}",
     "ci": "UNEXPECTED_CHECK_MAX_ITERATIONS=10000 mocha",
     "preversion": "npm run lint && npm run test",
-    "prepublishOnly": "npm run build",
     "version": "offline-github-changelog --next=${npm_package_version} > CHANGELOG.md && git add CHANGELOG.md",
     "bench": "node bench.js"
   },
