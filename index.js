@@ -7,13 +7,13 @@ function ukkonen(a, b, threshold) {
 
   if (a.length > b.length) {
     // Swap a and b so b longer or same length as a
-    var tmp = a;
+    const tmp = a;
     a = b;
     b = tmp;
   }
 
-  var aLen = a.length;
-  var bLen = b.length;
+  let aLen = a.length;
+  let bLen = b.length;
 
   // Performing suffix trimming:
   // We can linearly drop suffix common to both strings since they
@@ -31,7 +31,7 @@ function ukkonen(a, b, threshold) {
   // Performing prefix trimming
   // We can linearly drop prefix common to both strings since they
   // don't increase distance at all
-  var tStart = 0;
+  let tStart = 0;
   while (tStart < aLen && a.charCodeAt(tStart) === b.charCodeAt(tStart)) {
     tStart++;
   }
@@ -45,73 +45,77 @@ function ukkonen(a, b, threshold) {
 
   threshold = bLen < threshold ? bLen : threshold;
 
-  var dLen = bLen - aLen;
+  let dLen = bLen - aLen;
 
   if (threshold < dLen) {
     return threshold;
   }
 
   // floor(min(threshold, aLen) / 2)) + 2
-  var ZERO_K = ((aLen < threshold ? aLen : threshold) >> 1) + 2;
+  const ZERO_K = ((aLen < threshold ? aLen : threshold) >> 1) + 2;
 
-  var arrayLength = dLen + ZERO_K * 2 + 2;
-  var currentRow = new Array(arrayLength);
-  var nextRow = new Array(arrayLength);
-  for (var i = 0; i < arrayLength; i++) {
+  const arrayLength = dLen + ZERO_K * 2 + 2;
+  let currentRow = new Array(arrayLength);
+  let nextRow = new Array(arrayLength);
+  for (let i = 0; i < arrayLength; i++) {
     currentRow[i] = -1;
     nextRow[i] = -1;
   }
 
-  var aCharCodes = new Array(aLen);
-  var bCharCodes = new Array(bLen);
+  const aCharCodes = new Array(aLen);
+  const bCharCodes = new Array(bLen);
 
-  for (var i = 0, t = tStart; i < aLen; i++, t++) {
+  let i = 0;
+  let t = tStart;
+  while (i < aLen) {
     aCharCodes[i] = a.charCodeAt(t);
     bCharCodes[i] = b.charCodeAt(t);
+    i++;
+    t++;
   }
 
   while (i < bLen) {
     bCharCodes[i++] = b.charCodeAt(t++);
   }
 
-  var i = 0;
-  var conditionRow = dLen + ZERO_K;
-  var endMax = conditionRow << 1;
+  let j = 0;
+  let conditionRow = dLen + ZERO_K;
+  let endMax = conditionRow << 1;
   do {
-    i++;
+    j++;
 
-    var tmp = currentRow;
+    const tmp = currentRow;
     currentRow = nextRow;
     nextRow = tmp;
 
-    var start;
-    var previousCell;
-    var currentCell = -1;
-    var nextCell;
+    let start;
+    let previousCell;
+    let currentCell = -1;
+    let nextCell;
 
-    if (i <= ZERO_K) {
-      start = -i + 1;
-      nextCell = i - 2;
+    if (j <= ZERO_K) {
+      start = -j + 1;
+      nextCell = j - 2;
     } else {
-      start = i - (ZERO_K << 1) + 1;
+      start = j - (ZERO_K << 1) + 1;
       nextCell = currentRow[ZERO_K + start];
     }
 
-    var end;
-    if (i <= conditionRow) {
-      end = i;
-      nextRow[ZERO_K + i] = -1;
+    let end;
+    if (j <= conditionRow) {
+      end = j;
+      nextRow[ZERO_K + j] = -1;
     } else {
-      end = endMax - i;
+      end = endMax - j;
     }
 
-    for (var k = start, rowIndex = start + ZERO_K; k < end; k++, rowIndex++) {
+    for (let k = start, rowIndex = start + ZERO_K; k < end; k++, rowIndex++) {
       previousCell = currentCell;
       currentCell = nextCell;
       nextCell = currentRow[rowIndex + 1];
 
       // max(t, previousCell, nextCell + 1)
-      var t = currentCell + 1;
+      let t = currentCell + 1;
       t = t < previousCell ? previousCell : t;
       t = t < nextCell + 1 ? nextCell + 1 : t;
 
@@ -121,9 +125,9 @@ function ukkonen(a, b, threshold) {
 
       nextRow[rowIndex] = t;
     }
-  } while (nextRow[conditionRow] < aLen && i <= threshold);
+  } while (nextRow[conditionRow] < aLen && j <= threshold);
 
-  return i - 1;
+  return j - 1;
 }
 
 module.exports = ukkonen;

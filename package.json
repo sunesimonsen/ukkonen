@@ -10,8 +10,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "travis": "UNEXPECTED_CHECK_MAX_ITERATIONS=10000 mocha",
-    "bench": "matcha bench.js"
+    "lint": "eslint . && prettier --check '**/*.{js,md,json}'",
+    "format": "prettier --write **/*.{md,js,json}",
+    "ci": "UNEXPECTED_CHECK_MAX_ITERATIONS=10000 mocha",
+    "preversion": "npm run lint && npm run test",
+    "prepublishOnly": "npm run build",
+    "version": "offline-github-changelog --next=${npm_package_version} > CHANGELOG.md && git add CHANGELOG.md",
+    "bench": "node bench.js"
   },
   "keywords": [
     "Ukkonen",
@@ -28,10 +33,20 @@
   "license": "MIT",
   "devDependencies": {
     "chance-generators": "2.1.1",
-    "leven": "2.1.0",
-    "matcha": "0.7.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-mocha": "^10.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "leven": "3.1.0",
     "mocha": "3.5.3",
+    "nanobench": "3.0.0",
+    "offline-github-changelog": "^2.2.0",
+    "prettier": "^2.3.2",
     "unexpected": "10.36.0",
     "unexpected-check": "1.12.0"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }

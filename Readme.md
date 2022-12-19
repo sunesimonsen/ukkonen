@@ -24,18 +24,18 @@ npm install --save ukkonen
 You can find the distance between the strings `Ukkonen` and `Levenshtein` the following way:
 
 ```js
-var ukkonen = require('ukkonen')
+var ukkonen = require("ukkonen");
 
-assert.equal(ukkonen('Ukkonen', 'Levenshtein'), 8)
+assert.equal(ukkonen("Ukkonen", "Levenshtein"), 8);
 ```
 
 If you want to limit the distance by a given threshold:
 
 ```js
-var ukkonen = require('ukkonen')
+var ukkonen = require("ukkonen");
 
-assert.equal(ukkonen('Ukkonen', 'Levenshtein', 6), 6)
-assert.equal(ukkonen('Ukkonen', 'Levenshtein', 10), 8)
+assert.equal(ukkonen("Ukkonen", "Levenshtein", 6), 6);
+assert.equal(ukkonen("Ukkonen", "Levenshtein", 10), 8);
 ```
 
 ## Platform support

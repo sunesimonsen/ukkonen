@@ -1,63 +1,64 @@
 "use strict";
 
-var expect = require("unexpected").clone().use(require("unexpected-check"));
+const expect = require("unexpected").clone().use(require("unexpected-check"));
 
-var ukkonen = require("..");
-var leven = require("leven");
+const ukkonen = require("..");
+const leven = require("leven");
 
-var Generators = require("chance-generators");
+const Generators = require("chance-generators");
 
-var levenshtein = function levenshtein(a, b, threshold) {
+const levenshtein = (a, b, threshold) => {
   threshold = typeof threshold === "number" ? threshold : Infinity;
 
-  var distance = leven(a, b);
+  const distance = leven(a, b);
   return Math.min(threshold, distance);
 };
 
-var g = new Generators(42);
+const g = new Generators(42);
 
-var edit = g.pickone(["replace", "delete", "insert", "transpose"]);
-var strings = g.string({ length: g.natural({ max: 100 }) });
+const edit = g.pickone(["replace", "delete", "insert", "transpose"]);
+const strings = g.string({ length: g.natural({ max: 100 }) });
 
-var editedTexts = g
+const editedTexts = g
   .shape({
     editCount: g.natural({ max: 100 }),
-    text: g.paragraph()
+    text: g.paragraph(),
   })
-  .map(function(args) {
-    var editCount = args.editCount;
-    var text = args.text;
+  .map(({ text, editCount }) => {
+    const edits = g.array(edit, editCount);
 
-    var edits = g.array(edit, editCount);
+    const characters = Array.from(text);
 
-    var characters = Array.prototype.slice(text);
-
-    edits().forEach(function(edit) {
-      var position = g.natural() % characters.length;
+    edits().forEach((edit) => {
+      const position = g.natural() % characters.length;
       switch (edit) {
         case "replace":
           characters[position] = g.character();
+          break;
         case "delete":
           characters.splice(position, 1);
+          break;
         case "insert":
           characters.splice(position, 0, g.character());
+          break;
         case "transpose":
           if (position + 1 < characters.length) {
             var tmp = characters[position];
             characters[position] = characters[position + 1];
             characters[position + 1] = tmp;
           }
+          break;
       }
     });
 
     return {
       text: text,
-      editedText: characters.join("")
+      editedText: characters.join(""),
     };
   });
 
-describe("ukkonen", function() {
-  it("computes distance correctly for control group", function() {
+describe("ukkonen", () => {
+  it("computes distance correctly for control group", () => {
     [
       { name1: "ABCDE", name2: "FGHIJ", distance: 5 },
       { name1: "AVERY", name2: "GARVEY", distance: 3 },
@@ -84,8 +85,8 @@ describe("ukkonen", function() {
       { name1: "", name2: "wat", distance: 3 },
       { name1: "wat", name2: "", distance: 3 },
       { name1: "wat", name2: "wat", distance: 0 },
-      { name1: "Ukkonen", name2: "Levenshtein", distance: 8 }
-    ].forEach(function(example) {
+      { name1: "Ukkonen", name2: "Levenshtein", distance: 8 },
+    ].forEach((example) => {
       expect(
         ukkonen,
         "when called with",
@@ -96,9 +97,9 @@ describe("ukkonen", function() {
     });
   });
 
-  it("produces same result as Levenshtein", function() {
+  it("produces same result as Levenshtein", () => {
     expect(
-      function(a, b) {
+      (a, b) => {
         expect(ukkonen(a, b), "to equal", levenshtein(a, b));
       },
       "to be valid for all",
@@ -107,12 +108,9 @@ describe("ukkonen", function() {
     );
   });
 
-  it("produces same result as Levenshtein for random edits", function() {
+  it("produces same result as Levenshtein for random edits", () => {
     expect(
-      function(args) {
-        var text = args.text;
-        var editedText = args.editedText;
-
+      ({ text, editedText }) => {
         expect(
           ukkonen(text, editedText),
           "to equal",
@@ -124,10 +122,10 @@ describe("ukkonen", function() {
     );
   });
 
-  describe("when given a threshold", function() {
-    it("produces same result as Levenshtein or the given threshold", function() {
+  describe("when given a threshold", () => {
+    it("produces same result as Levenshtein or the given threshold", () => {
       expect(
-        function(a, b, threshold) {
+        (a, b, threshold) => {
           expect(
             ukkonen(a, b, threshold),
             "to equal",
@@ -141,12 +139,9 @@ describe("ukkonen", function() {
       );
     });
 
-    it("produces same result as Levenshtein for random edits or the given threshold", function() {
+    it("produces same result as Levenshtein for random edits or the given threshold", () => {
       expect(
-        function(args, threshold) {
-          var text = args.text;
-          var editedText = args.editedText;
-
+        ({ text, editedText }, threshold) => {
           expect(
             ukkonen(text, editedText, threshold),
             "to equal",
