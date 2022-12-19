@@ -1,0 +1,20 @@
+{
+  "extends": ["prettier", "eslint:recommended"],
+  "plugins": ["mocha", "node"],
+  "globals": {
+    "bench": false,
+    "suite": false
+  },
+  "env": {
+    "mocha": true,
+    "node": true,
+  },
+  "rules": {
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-nested-tests": "error",
+    "mocha/no-identical-title": "error"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  }
+}
