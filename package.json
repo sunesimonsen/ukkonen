@@ -42,7 +42,7 @@
     "nanobench": "3.0.0",
     "offline-github-changelog": "^3.0.1",
     "prettier": "^2.3.2",
-    "unexpected": "10.36.0",
+    "unexpected": "13.0.1",
     "unexpected-check": "1.19.0"
   },
   "engines": {
