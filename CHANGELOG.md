@@ -1,3 +1,16 @@
+### v2.1.0 (2022-12-19)
+
+#### Pull requests
+
+- [#7](https://github.com/sunesimonsen/ukkonen/pull/7) Upgrade most dev dependencies ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#6](https://github.com/sunesimonsen/ukkonen/pull/6) Bump unexpected-check from 1.12.0 to 1.19.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#2](https://github.com/sunesimonsen/ukkonen/pull/2) Bump offline-github-changelog from 2.5.0 to 3.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#3](https://github.com/sunesimonsen/ukkonen/pull/3) Bump mocha from 3.5.3 to 10.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Correct platform support](https://github.com/sunesimonsen/ukkonen/commit/bd12e4873b43b159b2b6288896ed3a8e49a8ce18) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v2.0.0 (2022-12-19)
 
 #### Pull requests
