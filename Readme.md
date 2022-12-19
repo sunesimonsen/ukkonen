@@ -40,7 +40,7 @@ assert.equal(ukkonen("Ukkonen", "Levenshtein", 10), 8);
 
 ## Platform support
 
-The library is ES5 and will work with any JavaScript bundler in the browser as well as Node versions with ES5 support.
+The library is ES6 and will work with any JavaScript bundler in the browser as well as Node versions with ES6 support.
 
 ## Benchmark
 
