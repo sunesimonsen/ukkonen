@@ -5,7 +5,15 @@ const expect = require("unexpected").clone().use(require("unexpected-check"));
 const ukkonen = require("..");
 const leven = require("leven");
 
-const Generators = require("chance-generators");
+const {
+  shape,
+  character,
+  natural,
+  paragraph,
+  pickone,
+  string,
+  array,
+} = require("chance-generators");
 
 const levenshtein = (a, b, threshold) => {
   threshold = typeof threshold === "number" ? threshold : Infinity;
@@ -14,48 +22,42 @@ const levenshtein = (a, b, threshold) => {
   return Math.min(threshold, distance);
 };
 
-const g = new Generators(42);
+const edit = pickone(["replace", "delete", "insert", "transpose"]);
+const strings = string({ length: natural({ max: 100 }) });
 
-const edit = g.pickone(["replace", "delete", "insert", "transpose"]);
-const strings = g.string({ length: g.natural({ max: 100 }) });
+const editedTexts = shape({
+  text: paragraph(),
+  edits: array(edit, natural({ max: 100 })),
+}).map(({ text, edits }) => {
+  const characters = Array.from(text);
 
-const editedTexts = g
-  .shape({
-    editCount: g.natural({ max: 100 }),
-    text: g.paragraph(),
-  })
-  .map(({ text, editCount }) => {
-    const edits = g.array(edit, editCount);
-
-    const characters = Array.from(text);
-
-    edits().forEach((edit) => {
-      const position = g.natural() % characters.length;
-      switch (edit) {
-        case "replace":
-          characters[position] = g.character();
-          break;
-        case "delete":
-          characters.splice(position, 1);
-          break;
-        case "insert":
-          characters.splice(position, 0, g.character());
-          break;
-        case "transpose":
-          if (position + 1 < characters.length) {
-            var tmp = characters[position];
-            characters[position] = characters[position + 1];
-            characters[position + 1] = tmp;
-          }
-          break;
-      }
-    });
-
-    return {
-      text: text,
-      editedText: characters.join(""),
-    };
+  edits.forEach((edit) => {
+    const position = natural() % characters.length;
+    switch (edit) {
+      case "replace":
+        characters[position] = character();
+        break;
+      case "delete":
+        characters.splice(position, 1);
+        break;
+      case "insert":
+        characters.splice(position, 0, character());
+        break;
+      case "transpose":
+        if (position + 1 < characters.length) {
+          const tmp = characters[position];
+          characters[position] = characters[position + 1];
+          characters[position + 1] = tmp;
+        }
+        break;
+    }
   });
+
+  return {
+    text,
+    editedText: characters.join(""),
+  };
+});
 
 describe("ukkonen", () => {
   it("computes distance correctly for control group", () => {
@@ -135,7 +137,7 @@ describe("ukkonen", () => {
         "to be valid for all",
         strings,
         strings,
-        g.natural({ min: 10, max: 30 })
+        natural({ min: 10, max: 30 })
       );
     });
 
@@ -150,7 +152,7 @@ describe("ukkonen", () => {
         },
         "to be valid for all",
         editedTexts,
-        g.natural({ min: 10, max: 30 })
+        natural({ min: 10, max: 30 })
       );
     });
   });
