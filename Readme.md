@@ -1,7 +1,7 @@
 # Ukkonen - Approximate String Matching
 
 [![npm version](https://badge.fury.io/js/ukkonen.svg)](https://badge.fury.io/js/ukkonen)
-[![Build Status](https://travis-ci.org/sunesimonsen/ukkonen.svg?branch=master)](https://travis-ci.org/sunesimonsen/ukkonen)
+[![Checks](https://github.com/sunesimonsen/ukkonen/actions/workflows/ci.yml/badge.svg)](https://github.com/sunesimonsen/ukkonen/actions/workflows/ci.yml)
 
 This project implements the [Approximate String Matching algorithm by Esko Ukkonen](https://www.sciencedirect.com/science/article/pii/S0019995885800462) extended with ideas from [An Extension of Ukkonen's Enhanced Dynamic Programming ASM Algorith by Hal Berghel and David Roach](http://berghel.net/publications/asm/asm.pdf).
 
