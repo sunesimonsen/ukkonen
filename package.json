@@ -35,7 +35,7 @@
     "chance-generators": "3.5.2",
     "eslint": "8.45.0",
     "eslint-config-prettier": "8.8.0",
-    "eslint-config-standard": "17.0.0",
+    "eslint-config-standard": "17.1.0",
     "eslint-plugin-mocha": "10.1.0",
     "eslint-plugin-node": "11.1.0",
     "mocha": "10.2.0",
