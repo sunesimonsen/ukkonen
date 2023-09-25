@@ -36,7 +36,7 @@
     "eslint": "8.46.0",
     "eslint-config-prettier": "8.9.0",
     "eslint-config-standard": "17.1.0",
-    "eslint-plugin-mocha": "10.1.0",
+    "eslint-plugin-mocha": "10.2.0",
     "eslint-plugin-node": "11.1.0",
     "mocha": "10.2.0",
     "nanobench": "3.0.0",
