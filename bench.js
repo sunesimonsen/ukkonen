@@ -85,7 +85,7 @@ suite(
       to: "Lorem Ipsum dolor sit amet, consectetur elit adipiscing. Cras tellus sapien, rhoncus sed bibendum in, facilisis non urna. Cras non mattis tellus, nec facilisis nisi. Proin vel purus eros. Morbi ultrices egestas mi vitae laoreet. Ut feugiat est lorem, a rhoncus mi lacinia vel. Aenean et velit neque. Quisque accumsan mi ligula, placerat lorem elementum ac. Nunc congue, eros eu aliquam commodo, leo orci tristique nulla, eu tempus quam justo eu neque. Nulla purus elit, porttitor ut sollicitudin sed, dictum vel justo. Mauris orci nisi, lacinia dictum augue nec, condimentum suscipit metus. Etiam lacinia pretium luctus. Mauris nulla turpis, suscipit vitae lobortis quis, tempor sed ex. Sed elementum enim eget venenatis mollis. Etiam sed congue neque, id tristique ex. Duis Vitae ipsum nec ligula vulputate ullamcorper. Phasellus fringilla odio turpis, eu condimentum turpis scelerisque quis.",
       threshold: 20,
     },
-  ]
+  ],
 );
 
 suite(
@@ -96,5 +96,5 @@ suite(
       to: "Curabitur fringilla eros lacus, et placerat magna pretium in. Suspendisse ut egestas dui. Nam quis sapien eget enim interdum interdum. Phasellus metus ligula, lacinia at tellus eu, iaculis blandit libero. Proin risus sem, ornare a orci et, aliquam rutrum elit. Aenean ac posuere justo, a maximus orci. In molestie nibh quis libero elementum, vel pellentesque metus volutpat. Maecenas non quam felis. Proin congue aliquet mauris laoreet viverra. Fusce auctor sapien a neque varius pellentesque. Nam ut sem neque. Pellentesque bibendum aliquet consectetur. Nam finibus diam non vestibulum maximus. Integer aliquet mattis elit, vitae vehicula erat pulvinar at. Ut placerat viverra aliquam. Nulla vehicula hendrerit justo. Contrary to popular belief, Lorem Ipsum is not simply random text.",
       threshold: 40,
     },
-  ]
+  ],
 );
