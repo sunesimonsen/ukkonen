@@ -94,7 +94,7 @@ describe("ukkonen", () => {
         "when called with",
         [example.name1, example.name2],
         "to equal",
-        example.distance
+        example.distance,
       );
     });
   });
@@ -106,7 +106,7 @@ describe("ukkonen", () => {
       },
       "to be valid for all",
       strings,
-      strings
+      strings,
     );
   });
 
@@ -116,11 +116,11 @@ describe("ukkonen", () => {
         expect(
           ukkonen(text, editedText),
           "to equal",
-          levenshtein(text, editedText)
+          levenshtein(text, editedText),
         );
       },
       "to be valid for all",
-      editedTexts
+      editedTexts,
     );
   });
 
@@ -131,13 +131,13 @@ describe("ukkonen", () => {
           expect(
             ukkonen(a, b, threshold),
             "to equal",
-            levenshtein(a, b, threshold)
+            levenshtein(a, b, threshold),
           );
         },
         "to be valid for all",
         strings,
         strings,
-        natural({ min: 10, max: 30 })
+        natural({ min: 10, max: 30 }),
       );
     });
 
@@ -147,12 +147,12 @@ describe("ukkonen", () => {
           expect(
             ukkonen(text, editedText, threshold),
             "to equal",
-            levenshtein(text, editedText, threshold)
+            levenshtein(text, editedText, threshold),
           );
         },
         "to be valid for all",
         editedTexts,
-        natural({ min: 10, max: 30 })
+        natural({ min: 10, max: 30 }),
       );
     });
   });
