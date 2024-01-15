@@ -41,7 +41,7 @@
     "mocha": "10.2.0",
     "nanobench": "3.0.0",
     "offline-github-changelog": "3.0.1",
-    "prettier": "3.0.3",
+    "prettier": "3.2.2",
     "unexpected": "13.2.1",
     "unexpected-check": "3.1.0"
   },
