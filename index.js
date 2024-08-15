@@ -1,3 +1,12 @@
+/**
+ * Calculates the edit distance using the Ukkonen algorithm.
+ *
+ * @param a - The first string.
+ * @param b - The second string.
+ * @param threshold (default Infinity) - The maximum edit distance to calculate.
+ * @returns The edit distance between string `a` and string `b`.
+ *          If the distance exceeds the threshold, returns the threshold.
+ */
 function ukkonen(a, b, threshold) {
   if (a === b) {
     return 0;
