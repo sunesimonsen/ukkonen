@@ -44,7 +44,7 @@
     "offline-github-changelog": "3.1.0",
     "prettier": "3.3.3",
     "unexpected": "13.2.1",
-    "unexpected-check": "3.1.0"
+    "unexpected-check": "3.2.0"
   },
   "engines": {
     "node": ">=12"
