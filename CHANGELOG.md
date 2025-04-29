@@ -1,3 +1,39 @@
+### v2.2.0 (2025-04-29)
+
+#### Pull requests
+
+- [#65](https://github.com/sunesimonsen/ukkonen/pull/65) Bump prettier from 3.3.3 to 3.4.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#61](https://github.com/sunesimonsen/ukkonen/pull/61) Bump chance-generators from 3.5.2 to 3.5.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#60](https://github.com/sunesimonsen/ukkonen/pull/60) Bump unexpected-check from 3.1.0 to 3.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#56](https://github.com/sunesimonsen/ukkonen/pull/56) Add TypeScript declarations ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#64](https://github.com/sunesimonsen/ukkonen/pull/64) Bump mocha from 10.7.3 to 10.8.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#62](https://github.com/sunesimonsen/ukkonen/pull/62) Bump eslint from 8.57.0 to 8.57.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#57](https://github.com/sunesimonsen/ukkonen/pull/57) Bump mocha from 10.2.0 to 10.7.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#58](https://github.com/sunesimonsen/ukkonen/pull/58) Bump eslint-plugin-mocha from 10.2.0 to 10.5.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#59](https://github.com/sunesimonsen/ukkonen/pull/59) Bump eslint from 8.56.0 to 8.57.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#55](https://github.com/sunesimonsen/ukkonen/pull/55) Bump prettier from 3.0.3 to 3.3.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#47](https://github.com/sunesimonsen/ukkonen/pull/47) Bump eslint-config-prettier from 9.0.0 to 9.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#49](https://github.com/sunesimonsen/ukkonen/pull/49) Bump eslint from 8.52.0 to 8.56.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#53](https://github.com/sunesimonsen/ukkonen/pull/53) Bump offline-github-changelog from 3.0.1 to 3.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#42](https://github.com/sunesimonsen/ukkonen/pull/42) Bump eslint from 8.51.0 to 8.52.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#41](https://github.com/sunesimonsen/ukkonen/pull/41) Test on Node v20 ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#36](https://github.com/sunesimonsen/ukkonen/pull/36) Bump prettier from 2.8.6 to 3.0.3 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#32](https://github.com/sunesimonsen/ukkonen/pull/32) Bump eslint-config-prettier from 8.9.0 to 9.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#39](https://github.com/sunesimonsen/ukkonen/pull/39) Bump eslint-plugin-mocha from 10.1.0 to 10.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#40](https://github.com/sunesimonsen/ukkonen/pull/40) Bump eslint from 8.46.0 to 8.51.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#27](https://github.com/sunesimonsen/ukkonen/pull/27) Bump eslint-config-prettier from 8.8.0 to 8.9.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#26](https://github.com/sunesimonsen/ukkonen/pull/26) Bump eslint-config-standard from 17.0.0 to 17.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#28](https://github.com/sunesimonsen/ukkonen/pull/28) Bump eslint from 8.45.0 to 8.46.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#29](https://github.com/sunesimonsen/ukkonen/pull/29) Bump unexpected from 13.2.0 to 13.2.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#23](https://github.com/sunesimonsen/ukkonen/pull/23) Bump eslint from 8.30.0 to 8.45.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#24](https://github.com/sunesimonsen/ukkonen/pull/24) Bump unexpected from 13.0.1 to 13.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#21](https://github.com/sunesimonsen/ukkonen/pull/21) Bump eslint-config-prettier from 8.5.0 to 8.8.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#22](https://github.com/sunesimonsen/ukkonen/pull/22) Bump prettier from 2.8.1 to 2.8.6 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Update build status badge](https://github.com/sunesimonsen/ukkonen/commit/e2e55568a784d59984b1a43084305726d0e0b3bd) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v2.1.0 (2022-12-19)
 
 #### Pull requests
