@@ -32,7 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "leven": "3.1.0",
-    "chance-generators": "3.5.2",
+    "chance-generators": "3.5.3",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
