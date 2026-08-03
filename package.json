@@ -41,7 +41,7 @@
     "eslint-plugin-node": "11.1.0",
     "mocha": "10.8.2",
     "nanobench": "3.0.0",
-    "offline-github-changelog": "3.1.0",
+    "offline-github-changelog": "4.0.0",
     "prettier": "3.6.2",
     "unexpected": "13.2.1",
     "unexpected-check": "3.2.0"
